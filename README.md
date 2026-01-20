@@ -1,70 +1,122 @@
-# DOM.IO Arena ⚡ (Blob Domination)
+# Blobination 🫧⚡ (DOM Arena)
 
-A premium **.io-style browser arena game** built entirely with **Vanilla JavaScript + DOM + DOM Events**.  
-No canvas. No WebGL. No libraries. Everything is generated dynamically via JS.
+A premium, **DOM-only** browser game inspired by the vibe of **agar.io / hole.io / slither.io** —  
+built **without canvas**, **without libraries**, using **pure vanilla JavaScript + DOM events**.
 
-✅ **School project focus:** DOM manipulation, events, interaction, and smooth UI.
+> ✅ Everything is created dynamically via JS  
+> ✅ Interactive entities + mouse selection + drag & drop  
+> ✅ Keyboard movement + real-time gameplay  
+> ✅ 8+ event types  
+> ✅ Smooth + optimized rendering using transform-based motion
 
 ---
 
 ## 🎮 Gameplay
-You control a blob in a scrolling arena:
-- Eat food to grow
-- Collect powerups
-- Avoid bigger bots
-- Become massive and dominate the map
 
-The game uses a **camera + zoom** system to simulate real .io gameplay, while staying fully DOM-based.
+You control **YOU**, a blob inside a neon arena.
 
----
+**Goal:**  
+Eat food → grow bigger → hunt bots → climb the leaderboard → survive until the end.
 
-## ✨ Features
-- ✅ Fully dynamic UI and game entities (created with JavaScript)
-- ✅ Mouse steering + keyboard movement (WASD / Arrow keys)
-- ✅ Drag & drop movement (press → drag → release)
-- ✅ Selection system (active object glow + inspector panel)
-- ✅ Actions on active element (click active = ability / explode / score)
-- ✅ Powerups (Dash / Shield / Bomb pulse)
-- ✅ Smooth camera tracking + mass-based zoom
-- ✅ Score system + combo system + timer
-- ✅ Premium UI (HUD, glow effects, particles, animations)
+Bots also grow and can become threats, so the game stays challenging.
 
 ---
 
-## 🧠 DOM Events Used (8+)
-This project intentionally uses many different DOM Events to cover the assignment requirements:
+## 🕹️ Controls
 
-- `pointermove` → aiming / tracking mouse position  
-- `click` → select objects + activate actions  
-- `dblclick` → quick color switch  
-- `pointerdown` → start drag  
-- `pointerup` → stop drag  
-- `keydown` → movement + abilities  
-- `keyup` → release movement keys  
-- `wheel` → zoom adjust  
-- `contextmenu` → right-click to remove selected entity (except player)  
-- `resize` → viewport recalculation  
+### Movement
+- **Mouse** → aim your direction (constant speed)
+- **W / A / S / D** → optional fine movement control
+
+### Abilities
+- **Shift** → Dash  
+- **E** → Shield  
+- **Q** → Bomb  
+- **Hold Space** → Burst (smooth + linear boost)
+
+### UI
+- **Esc** → Open/Close menu
+- **H** → Help
+- **R** → Instant restart
 
 ---
 
-## 🕹 Controls
-**Movement**
-- Mouse → movement direction
-- WASD / Arrow keys → movement
+## 🧩 Powerups (Drag & Drop)
 
-**Abilities**
-- Shift → Dash (cooldown)
-- E → Shield
-- Space → Burst (mini split-style move)
-- H → Help overlay
-- R → Reset
+Powerups spawn in the arena and can be activated by:
+✅ **Dragging them onto your player**
 
-**Interaction**
-- Click → select entity  
-- Click selected again → action  
-- Drag player → move it directly  
-- Right click → delete selected (except player)
+Types:
+- ⚡ **Dash** — reduces dash cooldown
+- 🛡️ **Shield** — reduces shield cooldown
+- 💣 **Bomb** — +1 bomb charge
+- 🧲 **Magnet** — pulls nearby food toward you
+
+---
+
+## 🧪 Developer Tools
+
+Click the ⚙️ button (bottom-right) to open Dev Tools.
+
+You can:
+- Toggle **Auto Spawn** (food/bots/powerups)
+- Toggle **Variable Mouse Speed** (classic “cursor distance = speed”)
+- Change **World Size Preset**
+  - Small / Medium / Large
+- Change live limits:
+  - Food / Bots / Powerups
+
+---
+
+## ⚡ Performance Notes (still DOM-only)
+
+Blobination is optimized **without breaking the DOM requirements**:
+
+✅ Transform-based movement (`translate3d`)  
+✅ Cached style updates (only when needed)  
+✅ FX pooling (reuses DOM nodes instead of recreating)  
+✅ Spatial hash grid for near-collision checks  
+
+This keeps the game smooth even with higher entity counts.
 
 ---
 
 ## 📁 Project Structure
+
+```
+
+Blobination/
+├─ index.html
+├─ styles.css
+└─ src/
+├─ main.js
+├─ game.js
+└─ config.js
+
+```
+
+---
+
+## 🚀 Run It
+
+Just open `index.html` in a browser.  
+(Works perfectly with GitHub Pages too.)
+
+---
+
+## ✅ Requirements Checklist
+
+- ✅ Vanilla JS only (no libraries)
+- ✅ All elements created dynamically in JS
+- ✅ 8+ event types used
+- ✅ Mouse selection + visible active state
+- ✅ Drag & drop movement / interaction
+- ✅ Keyboard movement
+- ✅ Click action on active element (powerups / actions)
+- ✅ Clean premium UI
+
+---
+
+## 🧠 Credits
+
+Created by **Homophobia**
